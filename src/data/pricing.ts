@@ -2,7 +2,7 @@ export interface PricingTier {
   id: string
   name: string
   price: number
-  period: 'per video' | 'per project' | 'monthly'
+  period: 'per video' | 'per project' | 'per package' | 'monthly'
   description: string
   features: string[]
   popular?: boolean

@@ -81,7 +81,7 @@ export default function TestimonialsPreview() {
                     {testimonial.name}
                   </div>
                   <div className="text-sm text-neutral-600">
-                    {testimonial.role}, {testimonial.company}
+                    {testimonial.company}
                   </div>
                 </div>
               </div>
