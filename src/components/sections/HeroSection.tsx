@@ -10,16 +10,16 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-peach-100 via-cream to-pink-300 pt-20 pb-12">
       {/* Decorative sunburst - top right */}
-      <div className="absolute -top-10 -right-10 md:top-0 md:right-0 opacity-80 pointer-events-none">
+      <div className="absolute -top-10 -right-10 md:top-0 md:right-0 opacity-80 pointer-events-none z-0">
         <Sunburst size={250} color="#F5C06A" />
       </div>
 
       {/* Decorative fan rays - bottom left */}
-      <div className="absolute bottom-20 left-0 opacity-40 pointer-events-none">
+      <div className="absolute bottom-20 left-0 opacity-40 pointer-events-none z-0">
         <FanRays color="#171717" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content - Left */}
           <motion.div

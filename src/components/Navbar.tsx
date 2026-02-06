@@ -26,10 +26,23 @@ export default function Navbar() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
+    const wasOpen = isOpen
     setIsOpen(false)
-    const target = document.querySelector(href)
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' })
+
+    const scrollToTarget = () => {
+      const target = document.querySelector(href)
+      if (target) {
+        const navHeight = 80
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' })
+      }
+    }
+
+    // Delay scroll on mobile so menu close animation doesn't interfere
+    if (wasOpen) {
+      setTimeout(scrollToTarget, 300)
+    } else {
+      scrollToTarget()
     }
   }
 
