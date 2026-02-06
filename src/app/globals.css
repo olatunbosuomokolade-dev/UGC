@@ -4,6 +4,7 @@
 
 :root {
   --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-playfair: 'Playfair Display', Georgia, serif;
 }
 
 * {
@@ -14,6 +15,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -22,32 +24,41 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Arch frame for hero photo */
+.arch-frame {
+  border-radius: 999px 999px 20px 20px;
+  overflow: hidden;
 }
 
-/* Fun animated gradient background for extra flair */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+/* Phone mockup frame */
+.phone-mockup {
+  border-radius: 40px;
+  border: 6px solid #1a1a1a;
+  overflow: hidden;
+  position: relative;
+  background: #000;
 }
 
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 15s ease infinite;
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 6px;
+  background: #333;
+  border-radius: 999px;
+  z-index: 10;
 }
 
+/* Marquee track */
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+}
 
-
-
-
-
-
-
-
+/* Section scroll targets */
+section[id] {
+  scroll-margin-top: 80px;
+}

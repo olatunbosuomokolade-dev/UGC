@@ -9,19 +9,34 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#faf5ff',
-          100: '#f3e8ff',
-          200: '#e9d5ff',
-          300: '#d8b4fe',
-          400: '#c084fc',
-          500: '#a855f7',
-          600: '#9333ea',
-          700: '#7e22ce',
-          800: '#6b21a8',
-          900: '#581c87',
-          950: '#3b0764',
+        peach: {
+          100: '#FDE8D8',
+          200: '#F9D4BA',
+          300: '#F5C6A0',
+          400: '#F0A875',
+          500: '#E8914E',
         },
+        lime: {
+          300: '#E2E87A',
+          400: '#D4D95C',
+          500: '#C0C94A',
+        },
+        pink: {
+          300: '#FFB0C5',
+          400: '#FF85A2',
+          500: '#FF6B8A',
+        },
+        mint: {
+          200: '#D4EDDA',
+          300: '#C8E6C9',
+          400: '#A8D5AB',
+        },
+        lavender: {
+          100: '#F8F0FF',
+          200: '#F0E6FF',
+          300: '#E6D4FF',
+        },
+        cream: '#FFF8F0',
         neutral: {
           50: '#fafafa',
           100: '#f5f5f5',
@@ -37,18 +52,19 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-playfair)', 'Georgia', 'serif'],
+      },
+      keyframes: {
+        'marquee-scroll': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee-scroll 20s linear infinite',
       },
     },
   },
   plugins: [],
 }
 export default config
-
-
-
-
-
-
-
-
-

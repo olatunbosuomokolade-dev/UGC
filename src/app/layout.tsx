@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  weight: ['400', '700', '800', '900'],
+})
 
 export const metadata: Metadata = {
   title: {
-    default: 'Skincare Content Creator & Video Editor | Premium UGC',
+    default: 'Itunnu | Skincare UGC Creator',
     template: '%s | Zinnialifestyle_'
   },
   description: 'Professional skincare content creator and video editor specializing in UGC for beauty brands. Premium content that converts.',
@@ -19,7 +23,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://yourwebsite.com',
     siteName: 'Zinnialifestyle - Skincare Content Creator',
-    title: 'Skincare Content Creator & Video Editor | Premium UGC',
+    title: 'Itunnu | Skincare UGC Creator',
     description: 'Professional skincare content creator and video editor specializing in UGC for beauty brands.',
     images: [
       {
@@ -32,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Skincare Content Creator & Video Editor | Premium UGC',
+    title: 'Itunnu | Skincare UGC Creator',
     description: 'Professional skincare content creator and video editor specializing in UGC for beauty brands.',
     images: ['/og-image.jpg'],
   },
@@ -55,21 +59,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="antialiased">
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <body className="antialiased font-sans">
         <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <main>{children}</main>
       </body>
     </html>
   )
 }
-
-
-
-
-
-
-
-
-
