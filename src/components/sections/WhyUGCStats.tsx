@@ -14,7 +14,7 @@ export default function WhyUGCStats() {
       {/* Why UGC heading */}
       <div className="bg-black py-12 md:py-16 mb-8">
         <h2 className="font-display text-5xl md:text-7xl font-bold text-white text-center">
-          Why UGC?
+          Why Zinnia?
         </h2>
       </div>
 
@@ -24,7 +24,7 @@ export default function WhyUGCStats() {
           {displayStats.map((stat, index) => (
             <motion.div
               key={stat.id}
-              className={`${bgColors[index]} ${textColors[index]} p-10 md:p-12`}
+              className={`${bgColors[index]} ${textColors[index]} p-10 md:p-12 rounded-2xl`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

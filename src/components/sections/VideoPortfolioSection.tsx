@@ -104,33 +104,40 @@ export default function VideoPortfolioSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
-              {/* Phone mockup */}
-              <div className="phone-mockup aspect-[9/16] relative">
-                <video
-                  ref={(el) => {
-                    if (el) {
-                      videoRefs.current.set(project.id, el)
-                    } else {
-                      videoRefs.current.delete(project.id)
-                    }
-                  }}
-                  src={project.videoFile}
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                  preload="metadata"
-                />
-              </div>
+              <a
+                href={project.videoUrl || 'https://tiktok.com/@zinnialifestyle_'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                {/* Phone mockup */}
+                <div className="phone-mockup aspect-[9/16] relative">
+                  <video
+                    ref={(el) => {
+                      if (el) {
+                        videoRefs.current.set(project.id, el)
+                      } else {
+                        videoRefs.current.delete(project.id)
+                      }
+                    }}
+                    src={project.videoFile}
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                    preload="metadata"
+                  />
+                </div>
 
-              <div className="mt-3">
-                <h3 className="font-bold text-neutral-900 text-sm">
-                  {project.title}{project.client ? `, ${project.client}` : ''}
-                </h3>
-                <p className="text-neutral-600 text-xs mt-1 line-clamp-2">
-                  {project.description}
-                </p>
-              </div>
+                <div className="mt-3">
+                  <h3 className="font-bold text-neutral-900 text-sm">
+                    {project.title}{project.client ? `, ${project.client}` : ''}
+                  </h3>
+                  <p className="text-neutral-600 text-xs mt-1 line-clamp-2">
+                    {project.description}
+                  </p>
+                </div>
+              </a>
             </motion.div>
           ))}
         </div>

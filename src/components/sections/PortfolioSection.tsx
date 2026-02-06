@@ -29,7 +29,7 @@ export default function PortfolioSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="relative aspect-[4/5] rounded-lg overflow-hidden mb-3 bg-neutral-200">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-3 bg-neutral-200">
                 {project.thumbnail && (
                   <Image
                     src={project.thumbnail}

@@ -21,7 +21,7 @@ export default function PhotoGridSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="grid grid-cols-2 gap-2 rounded-lg overflow-hidden mb-3">
+              <div className="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden mb-3">
                 {project.thumbnail && (
                   <div className="relative aspect-square col-span-2 bg-neutral-200">
                     <Image
