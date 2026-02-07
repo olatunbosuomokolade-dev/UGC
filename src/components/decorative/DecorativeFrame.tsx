@@ -4,6 +4,7 @@ export default function DecorativeFrame({
   variant = 'starburst',
   imageSrc,
   alt = '',
+  label,
   size = 180,
   bgColor,
   className = '',
@@ -11,6 +12,7 @@ export default function DecorativeFrame({
   variant?: 'starburst' | 'flower' | 'cloud'
   imageSrc?: string
   alt?: string
+  label?: string
   size?: number
   bgColor?: string
   className?: string
@@ -76,13 +78,17 @@ export default function DecorativeFrame({
   return (
     <div className={`relative ${className}`} style={{ width: size, height: size }}>
       {renderFrame()}
-      {imageSrc && (
+      {imageSrc ? (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative w-3/5 h-3/5 rounded-full overflow-hidden">
             <Image src={imageSrc} alt={alt} fill className="object-cover" sizes={`${size}px`} />
           </div>
         </div>
-      )}
+      ) : label ? (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-neutral-900 font-bold text-sm text-center leading-tight px-4">{label}</span>
+        </div>
+      ) : null}
     </div>
   )
 }

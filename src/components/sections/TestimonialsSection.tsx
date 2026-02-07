@@ -39,8 +39,7 @@ export default function TestimonialsSection() {
               <div className="flex-shrink-0">
                 <DecorativeFrame
                   variant={frameVariants[index % frameVariants.length]}
-                  imageSrc={testimonial.image}
-                  alt={testimonial.name}
+                  label={testimonial.name}
                   size={200}
                   bgColor={frameBgColors[index % frameBgColors.length]}
                 />
